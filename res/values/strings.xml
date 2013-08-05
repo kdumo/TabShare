@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TabShare</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_even_split">Split Bill Evenly</string>
+    <string name="number_payees_input">Enter number of payees</string>
+    <string name="subtotal_input">Enter subtotal from bill</string>
+    <string name="total_input">Enter final total from bill</string>
+    <string name="even_split_button">Split Bill Evenly</string>
+    <string name="itemize_button">Split Bill Fairly</string>
+    <string name="tip_notification">Tip is usually included for large parties.  If the service was great, why not add a little extra?</string>
+    <string name="title_activity_itemize">Itemize Bill Items</string>
+    <string name="tip_checkbox">Add Tip</string>
+    <string name="title_activity_add_payees">Add Bill Payees</string>
+    <string name="add_contact_button">+Contact</string>
+    <string name="name_input">Enter name</string>
+    <string name="browse_contact_button">Browse Contacts</string>
+
+</resources>
