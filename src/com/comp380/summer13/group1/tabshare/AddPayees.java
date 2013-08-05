@@ -1,17 +1,21 @@
 package com.comp380.summer13.group1.tabshare;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract.CommonDataKinds.Email;
+import android.provider.ContactsContract;
+import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.Contacts;
+import android.provider.ContactsContract.Data;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
 
 public class AddPayees extends Activity {
 
@@ -38,36 +42,63 @@ public class AddPayees extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {  
 	    if (resultCode == RESULT_OK) {  
 	        switch (requestCode) {  
-	        case CONTACT_PICKER_RESULT:  
+	        case CONTACT_PICKER_RESULT:
+	        	ContentResolver cr = getContentResolver();
 	            Cursor cursor = null;  
-	            String email = "";  
+	            String mobile = "";
+	            String dispName = "";
 	            try {  
 	                Uri result = data.getData();  
-	                Log.v(DEBUG_TAG, "Got a contact result: "  
-	                        + result.toString());  
-	                // get the contact id from the Uri  
 	                String id = result.getLastPathSegment();  
-	                // query for everything email  
-	                cursor = getContentResolver().query(Email.CONTENT_URI,  
-	                        null, Email.CONTACT_ID + "=?", new String[] { id },  
-	                        null);  
-	                int emailIdx = cursor.getColumnIndex(Email.DATA);  
-	                // let's just get the first email  
-	                if (cursor.moveToFirst()) {  
-	                    email = cursor.getString(emailIdx);  
-	                    Log.v(DEBUG_TAG, "Got email: " + email);  
-	                } else {  
-	                    Log.w(DEBUG_TAG, "No results");  
-	                }  
+	                cursor = cr.query(Phone.CONTENT_URI,  
+	                        null, Phone.CONTACT_ID + " = " + id, null,  
+	                        null);
+	                int nameIdx = cursor.getColumnIndex(Data.DISPLAY_NAME);
+	                // let's just get the first mobile 
+	                if(cursor.moveToFirst()) {
+		                Log.v(null,"contact has "+cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER)));
+		                if(Integer.parseInt(cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER)))==1) {
+		                	String number = cursor.getString(cursor.getColumnIndex(Phone.NUMBER));
+		                	Log.v(null,"type "+cursor.getInt(cursor.getColumnIndex(Phone.TYPE)));
+		                    if(cursor.getInt(cursor.getColumnIndex(Phone.TYPE))==Phone.TYPE_MOBILE)mobile = number;
+		                }
+		                while (cursor.moveToNext()) {
+		                    String number = cursor.getString(cursor.getColumnIndex(Phone.NUMBER));
+		                    int type = cursor.getInt(cursor.getColumnIndex(Phone.TYPE));
+		                    Log.v(null, "for number "+number);
+		                    switch(type) {
+			                    case Phone.TYPE_MOBILE: mobile = number; break;
+			                    case Phone.TYPE_MMS: mobile = number; break;
+			                    default: Log.v(null, "number type "+type); break;
+		                    }
+		                }
+		                if (mobile == "") {
+		                	cursor.moveToFirst();
+			                while (cursor.moveToNext()) {
+			                    String number = cursor.getString(cursor.getColumnIndex(Phone.NUMBER));
+			                    Log.v(null, "for number "+number);
+			                    int type = cursor.getInt(cursor.getColumnIndex(Phone.TYPE));
+			                    if (type==Phone.TYPE_MOBILE) mobile = number;
+			                }
+		                }
+		                if (cursor.moveToFirst()) {   
+		                    dispName = cursor.getString(nameIdx);
+		                    Log.v(DEBUG_TAG, "Got mobile: " + mobile);  
+		                } else {  
+		                    Log.w(DEBUG_TAG, "No results");  
+		                }
+	                }
 	            } catch (Exception e) {  
-	                Log.e(DEBUG_TAG, "Failed to get email data", e);  
+	                Log.e(DEBUG_TAG, "Failed to get mobile data", e);  
 	            } finally {  
 	                if (cursor != null) {  
 	                    cursor.close();  
 	                }  
-	                EditText emailEntry = (EditText) findViewById(R.id.name_input);  
-	                emailEntry.setText(email);  
-	                if (email.length() == 0) {  
+	                EditText nameEntry = (EditText) findViewById(R.id.name_input);
+	                EditText numberEntry = (EditText) findViewById(R.id.number_input);
+	                nameEntry.setText(dispName);
+	                numberEntry.setText(mobile);
+	                if (mobile.length() == 0) {  
 	                    Toast.makeText(this, "No phone number found.",  
 	                            Toast.LENGTH_LONG).show();  
 	                }  

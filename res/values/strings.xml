@@ -14,8 +14,10 @@
     <string name="title_activity_itemize">Itemize Bill Items</string>
     <string name="tip_checkbox">Add Tip</string>
     <string name="title_activity_add_payees">Add Bill Payees</string>
-    <string name="add_contact_button">+Contact</string>
+    <string name="add_contact_button">Add Payee</string>
     <string name="name_input">Enter name</string>
+    <string name="number_input">Enter phone number (optional)</string>
     <string name="browse_contact_button">Browse Contacts</string>
+    <string name="title_activity_even_results">EvenResults</string>
 
 </resources>
