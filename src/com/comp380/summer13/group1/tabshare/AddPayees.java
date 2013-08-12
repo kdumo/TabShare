@@ -1,7 +1,12 @@
 package com.comp380.summer13.group1.tabshare;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -13,23 +18,52 @@ import android.provider.ContactsContract.Data;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 
 public class AddPayees extends Activity {
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_payees);
+		final ListView payees = (ListView) findViewById(R.id.payees_list);
+		final ArrayList<String> list = new ArrayList<String>();
+		final ArrayAdapter adpter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list);
+		
+		payees.setAdapter(adpter);
+		
+		
+		
+		Button addPayee = (Button) findViewById(R.id.add_contact_button);
+		addPayee.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				EditText nameEntry = (EditText) findViewById(R.id.name_input);
+				EditText numbEntry = (EditText) findViewById(R.id.number_input);
+				String payeeName = nameEntry.getText().toString();
+				list.add(payeeName);
+				int i = list.size()-1;
+				Log.v(null, list.get(i).toString());
+				payees.setAdapter(adpter);
+				nameEntry.setText(null);
+				numbEntry.setText(null);
+			}
+		});
+		
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.add_payees, menu);
 		return true;
+		
 	}
 	private static final int CONTACT_PICKER_RESULT = 1001;
 	private static final String DEBUG_TAG = null;  
@@ -54,7 +88,6 @@ public class AddPayees extends Activity {
 	                        null, Phone.CONTACT_ID + " = " + id, null,  
 	                        null);
 	                int nameIdx = cursor.getColumnIndex(Data.DISPLAY_NAME);
-	                // let's just get the first mobile 
 	                if(cursor.moveToFirst()) {
 		                Log.v(null,"contact has "+cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER)));
 		                if(Integer.parseInt(cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER)))==1) {
@@ -111,5 +144,4 @@ public class AddPayees extends Activity {
 	}  
 	
 	
-
 }
