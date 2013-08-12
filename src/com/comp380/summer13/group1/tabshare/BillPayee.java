@@ -4,51 +4,34 @@ import java.util.ArrayList;
 
 public class BillPayee {
 
-	private String firstName;
-	private String lastName;
-	private ArrayList<BillItem> items;
+	private String name;
+	private ArrayList<BillItem> items = new ArrayList<BillItem>();
 	private String phoneNumber;
-	private String email;
-
-	public BillPayee(String first, String last) {
+	
+	public BillPayee() {
 		phoneNumber = null;
-		firstName = first;
-		lastName = last;
+		name = null;
 		items = new ArrayList<BillItem>();
-		email = null;
 	}
 
-	public BillPayee(String first, String last, String phone) {
-		phoneNumber = phone;
-		firstName = first;
-		lastName = last;
+	public BillPayee(String nm, String number) {
+		phoneNumber = number;
+		name = nm;
 		items = new ArrayList<BillItem>();
-		email = null;
 	}
 
-	public BillPayee(String first, String last, String phone,
-			String email) {
-		phoneNumber = phone;
-		firstName = first;
-		lastName = last;
+	public BillPayee(String nm) {
+		phoneNumber = null;
+		name = nm;
 		items = new ArrayList<BillItem>();
-		this.email = email;
 	}
 
-	public void setFirstName(String s) {
-		firstName = s;
+	public void setName(String s) {
+		name = s;
 	}
 
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setLastName(String s) {
-		lastName = s;
-	}
-
-	public String getLastName() {
-		return lastName;
+	public String getName() {
+		return name;
 	}
 
 	public void addItem(BillItem bi) {
@@ -74,14 +57,6 @@ public class BillPayee {
 
 	public String getPhone() {
 		return phoneNumber;
-	}
-
-	public void setEmail(String s) {
-		email = s;
-	}
-
-	public String getEmail() {
-		return email;
 	}
 
 	public double getTotal() {

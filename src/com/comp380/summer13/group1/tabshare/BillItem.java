@@ -5,6 +5,12 @@ public class BillItem {
 	private int quantity;
 	private double price;
 
+	public BillItem() {
+		this.itemName = null;
+		this.quantity = 0;
+		this.price = 0.00;
+	}
+	
 	public BillItem(String itemName, int quantity, double price) {
 		this.itemName = itemName;
 		this.quantity = quantity;

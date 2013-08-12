@@ -21,8 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/name_input"
-            android:inputType="textPersonName" />
-
+            android:inputType="textCapWords" />
 	</LinearLayout>
 	
     <LinearLayout
@@ -45,6 +44,12 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal" >
+        <Button  
+	        android:layout_width="wrap_content"  
+	        android:layout_height="wrap_content"  
+	        android:id="@+id/clear_payee_button"  
+	        android:text="@string/clear_payee_list"  
+	        android:onClick="doLaunchContactPicker"/>
         <Button  
 	        android:layout_width="wrap_content"  
 	        android:layout_height="wrap_content"  
