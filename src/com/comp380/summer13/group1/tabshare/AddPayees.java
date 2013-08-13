@@ -1,7 +1,6 @@
 package com.comp380.summer13.group1.tabshare;
 
 import java.util.ArrayList;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentResolver;
@@ -168,7 +167,7 @@ public class AddPayees extends Activity {
 											}
 										}
 										if (leader!=member) {
-											bgList.get(leader).addPayee(payeeMember, bgList.get(member).getPayee(0).getPhone());
+											bgList.get(leader).addPayee(bgList.get(member).getPayee(0));
 											bgList.remove(member);
 											list.remove(list.indexOf(payeeMember));
 											payees.setAdapter(adpter);
@@ -208,7 +207,6 @@ public class AddPayees extends Activity {
 		
 		Button clear = (Button) findViewById(R.id.clear_payee_button);
 		clear.setOnClickListener(new View.OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				if(list.size()>0){
@@ -228,22 +226,14 @@ public class AddPayees extends Activity {
 						bgList = new ArrayList<BillGroup>();
 					 }
 					});
-	
-					alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
-					 public void onClick(DialogInterface dialog, int whichButton) {
-					     // Canceled.
-					}
-					});
-	
-					 alert.show();
-				
+					alert.setNegativeButton("No", null);
+					alert.show();
 				}
 			}
 		});
 		
 		Button addPayee = (Button) findViewById(R.id.add_contact_button);
 		addPayee.setOnClickListener(new View.OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				EditText nameEntry = (EditText) findViewById(R.id.name_input);
@@ -258,10 +248,17 @@ public class AddPayees extends Activity {
 					nameEntry.setText(null);
 					numbEntry.setText(null);
 				}
-				
 			}
 		});
 		
+		Button next = (Button) findViewById(R.id.next_button_add_payees);
+		next.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(AddPayees.this,Itemize.class);
+				startActivity(intent);
+			}
+		});
 	}
 
 	@Override
@@ -270,6 +267,7 @@ public class AddPayees extends Activity {
 		return true;
 		
 	}
+	
 	private static final int CONTACT_PICKER_RESULT = 1001;  
 	public void doLaunchContactPicker(View view) {  
 	    Intent contactPickerIntent = new Intent(Intent.ACTION_PICK,  
@@ -369,7 +367,5 @@ public class AddPayees extends Activity {
 	    } else {  
 	        Log.w(null, "Warning: activity result not ok");  
 	    }  
-	}  
-	
-	
+	}  	
 }

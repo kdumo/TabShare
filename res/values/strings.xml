@@ -25,5 +25,7 @@
     <string name="price_item_input">Price</string>
     <string name="quantity_item_input">Quantity</string>
     <string name="add_to_list">Add Item</string>
+    <string name="next_button">Next</string>
+    <string name="subtotal_display_default">Error: No Subtotal Returned</string>
 
 </resources>

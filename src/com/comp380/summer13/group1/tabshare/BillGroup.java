@@ -16,6 +16,10 @@ public class BillGroup {
 	public void addPayee(String name, String number) {
 		billPayee.add(new BillPayee(name, number));
 	}
+	
+	public void addPayee(BillPayee bp) {
+		billPayee.add(bp);
+	}
 
 	public BillPayee getPayee(int index) {
 		return billPayee.get(index);

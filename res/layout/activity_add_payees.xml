@@ -64,6 +64,17 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        <Button  
+	        android:layout_width="fill_parent"  
+	        android:layout_height="wrap_content"  
+	        android:id="@+id/next_button_add_payees"  
+	        android:text="@string/next_button"/>
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:gravity="center"
         android:orientation="horizontal">
@@ -74,5 +85,6 @@
     	    android:id="@+id/payees_list"/>
         
     </LinearLayout>
+    
 
 </LinearLayout>

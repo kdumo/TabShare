@@ -7,25 +7,29 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context=".EvenSplit" >
-	<LinearLayout
+    tools:context=".Itemize" 
+    android:id="@+id/main_linear">
+    <LinearLayout
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
-	    android:orientation="horizontal">
-	    <EditText
-        	android:id="@+id/subtotal_input"
-        	android:layout_width="0dp"
-        	android:layout_height="wrap_content"
-        	android:layout_weight="1"
-        	android:hint="@string/subtotal_input"
-        	android:inputType="numberDecimal" />
+	    android:orientation="horizontal"
+	    android:gravity="center">
+
+	    <TextView
+	        android:id="@+id/subtotal_display"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/subtotal_display_default"
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+	        android:gravity="center" />
+
 	</LinearLayout>
-	<LinearLayout
+    <LinearLayout
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:orientation="horizontal">
 	    <EditText
-        	android:id="@+id/total_input"
+        	android:id="@+id/total_input_itemize"
         	android:layout_width="0dp"
         	android:layout_height="wrap_content"
         	android:layout_weight="1"
@@ -37,7 +41,7 @@
 	    android:layout_height="wrap_content"
 	    android:orientation="horizontal">
 	    <TextView
-	        android:id="@+id/tip_notification"
+	        android:id="@+id/tip_notification_itemize"
 	        android:layout_width="0dp"
         	android:layout_height="wrap_content"
         	android:layout_weight="1"
@@ -50,7 +54,7 @@
         android:gravity="center"
         android:orientation="horizontal" >
 	    <CheckBox
-		    android:id="@+id/tip_checkbox"
+		    android:id="@+id/tip_checkbox_itemize"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:text="@string/tip_checkbox" />

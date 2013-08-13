@@ -27,11 +27,24 @@ public class AddItems extends Activity {
 		}
 		for (int i=0; i<AddPayees.bgList.get(payeeListIndex).getSize(); i++) {
 			Log.v(null,AddPayees.bgList.get(payeeListIndex).getPayee(i).getName()+" has "+AddPayees.bgList.get(payeeListIndex).getPayee(i).getNumItem()+" items");
-			for (int j=0; j<AddPayees.bgList.get(payeeListIndex).getPayee(i).getNumItem(); j++) {
-				String name = AddPayees.bgList.get(payeeListIndex).getPayee(i).getItem(j).getName();
-				if(name == null) name = "Unnamed Items";
-				String addString = AddPayees.bgList.get(payeeListIndex).getPayee(i).getItem(j).getQuantity()+" "+name+" at $";
-				addString += AddPayees.bgList.get(payeeListIndex).getPayee(i).getItem(j).getPrice()+" each =$" +AddPayees.bgList.get(payeeListIndex).getPayee(i).getItem(j).getSubtotal();
+			if(i==0) {
+				for (int j=0; j<AddPayees.bgList.get(payeeListIndex).getPayee(i).getNumItem(); j++) {
+					String name = AddPayees.bgList.get(payeeListIndex).getPayee(i).getItem(j).getName();
+					if(name == null) name = "Unnamed Items";
+					String addString = AddPayees.bgList.get(payeeListIndex).getPayee(i).getItem(j).getQuantity()+" "+name+" at $";
+					addString += AddPayees.bgList.get(payeeListIndex).getPayee(i).getItem(j).getPrice()+" each =$" +AddPayees.bgList.get(payeeListIndex).getPayee(i).getItem(j).getSubtotal();
+					list.add(addString);
+				}
+			}
+			else {
+				double subtotal = 0.00;
+				String groupMemberName = AddPayees.bgList.get(payeeListIndex).getPayee(i).getName();
+				for (int j=0; j<AddPayees.bgList.get(payeeListIndex).getPayee(i).getNumItem(); j++) {
+					double quantity = AddPayees.bgList.get(payeeListIndex).getPayee(i).getItem(j).getQuantity();
+					double price = AddPayees.bgList.get(payeeListIndex).getPayee(i).getItem(j).getPrice();
+					subtotal += (quantity*price);
+				}
+				String addString = groupMemberName+"'s subtotal is $"+subtotal;
 				list.add(addString);
 			}
 		}
