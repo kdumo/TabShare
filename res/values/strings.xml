@@ -3,7 +3,6 @@
 
     <string name="app_name">TabShare</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="title_activity_even_split">Split Bill Evenly</string>
     <string name="number_payees_input">Enter number of payees</string>
     <string name="subtotal_input">Enter subtotal from bill</string>
@@ -25,5 +24,14 @@
     <string name="price_item_input">Price</string>
     <string name="quantity_item_input">Quantity</string>
     <string name="add_to_list">Add Item</string>
+    <string name="even_subtotal">Subtotal</string>
+    <string name="even_tip">Tip</string>
+    <string name="even_total">Total</string>
+    <string name="zero_decimal">0.00</string>
+    <string name="even_5">5%</string>
+    <string name="even_10">10%</string>
+    <string name="even_15">15%</string>
+    <string name="even_round_up">Round Up</string>
+    <string name="even_calculate">Calculate</string>
 
 </resources>
