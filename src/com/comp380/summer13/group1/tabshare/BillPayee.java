@@ -67,7 +67,7 @@ public class BillPayee {
 		double runningTotal = 0.00;
 		for (int i = 0; i < items.size(); i++) {
 			double price = items.get(i).getPrice();
-			int quantity = items.get(i).getQuantity();
+			double quantity = items.get(i).getQuantity();
 			runningTotal += (price * quantity);
 		}
 		return runningTotal;

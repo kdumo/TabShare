@@ -2,7 +2,7 @@ package com.comp380.summer13.group1.tabshare;
 
 public class BillItem {
 	private String itemName;
-	private int quantity;
+	private double quantity;
 	private double price;
 
 	public BillItem() {
@@ -11,13 +11,13 @@ public class BillItem {
 		this.price = 0.00;
 	}
 	
-	public BillItem(int quantity, double price) {
+	public BillItem(double quantity, double price) {
 		this.itemName = null;
 		this.quantity = quantity;
 		this.price = price;
 	}
 	
-	public BillItem(String itemName, int quantity, double price) {
+	public BillItem(String itemName, double quantity, double price) {
 		this.itemName = itemName;
 		this.quantity = quantity;
 		this.price = price;
@@ -31,11 +31,11 @@ public class BillItem {
 		return itemName;
 	}
 
-	public void setQuantity(int i) {
+	public void setQuantity(double i) {
 		quantity = i;
 	}
 
-	public int getQuantity() {
+	public double getQuantity() {
 		return quantity;
 	}
 
@@ -45,6 +45,13 @@ public class BillItem {
 
 	public double getPrice() {
 		return price;
+	}
+
+	public double getSubtotal() {
+		double subtotal = quantity*price;
+		subtotal = (double)Math.ceil(subtotal * 10000) / 10000;
+		subtotal = (double)Math.round(subtotal*100)/100;
+		return subtotal;
 	}
 
 }
