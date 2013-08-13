@@ -20,5 +20,10 @@
     <string name="browse_contact_button">Contacts</string>
     <string name="title_activity_even_results">EvenResults</string>
     <string name="clear_payee_list">Clear</string>
+    <string name="title_activity_add_items">AddItems</string>
+    <string name="name_item_input">Name of Item (Optional)</string>
+    <string name="price_item_input">Price</string>
+    <string name="quantity_item_input">Quantity</string>
+    <string name="add_to_list">Add Item</string>
 
 </resources>

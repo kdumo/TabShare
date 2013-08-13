@@ -27,13 +27,15 @@ import android.widget.Toast;
 
 
 public class AddPayees extends Activity {
-	ArrayList<BillGroup> bgList = new ArrayList<BillGroup>();
-	BillGroup bgObj = new BillGroup();
-	BillPayee bpObj = new BillPayee();
-	BillItem biObj = new BillItem();
+	public static ArrayList<BillGroup> bgList = new ArrayList<BillGroup>();
+	public static BillGroup bgObj = new BillGroup();
+	public static BillPayee bpObj = new BillPayee();
+	public static BillItem biObj = new BillItem();
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_payees);
 		final ListView payees = (ListView) findViewById(R.id.payees_list);
@@ -115,8 +117,13 @@ public class AddPayees extends Activity {
 								viewNumber.show();
 				        		break;
 				        	case 2:
-				        		SmsManager smsManager = SmsManager.getDefault();
-				        		smsManager.sendTextMessage("+1-661-505-8458", null, "sms message", null, null);
+				        		bgObj = bgList.get(findInList(payeeName));
+				        		Intent intent = new Intent(AddPayees.this, AddItems.class);
+				        		startActivity(intent);
+				        		
+				        		
+				        	/*	SmsManager smsManager = SmsManager.getDefault();
+				        		smsManager.sendTextMessage("+1-661-505-8458", null, "sms message", null, null); */
 				        		break;
 				        	case 3:
 				        		AlertDialog.Builder delete = new AlertDialog.Builder(AddPayees.this);

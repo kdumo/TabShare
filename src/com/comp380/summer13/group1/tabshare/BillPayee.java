@@ -58,6 +58,10 @@ public class BillPayee {
 	public String getPhone() {
 		return phoneNumber;
 	}
+	
+	public int getNumItem() {
+		return items.size();
+	}
 
 	public double getTotal() {
 		double runningTotal = 0.00;

@@ -11,6 +11,12 @@ public class BillItem {
 		this.price = 0.00;
 	}
 	
+	public BillItem(int quantity, double price) {
+		this.itemName = null;
+		this.quantity = quantity;
+		this.price = price;
+	}
+	
 	public BillItem(String itemName, int quantity, double price) {
 		this.itemName = itemName;
 		this.quantity = quantity;

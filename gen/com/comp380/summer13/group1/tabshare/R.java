@@ -25,36 +25,44 @@ public final class R {
         public static final int logo=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000d;
-        public static final int add_contact_button=0x7f080004;
-        public static final int browse_contact_button=0x7f080003;
-        public static final int button1=0x7f08000b;
-        public static final int button2=0x7f08000c;
-        public static final int clear_payee_button=0x7f080002;
-        public static final int name_input=0x7f080000;
-        public static final int number_input=0x7f080001;
-        public static final int number_payees_input=0x7f080006;
-        public static final int payees_list=0x7f080005;
-        public static final int subtotal_input=0x7f08000a;
-        public static final int tip_checkbox=0x7f080009;
-        public static final int tip_notification=0x7f080008;
-        public static final int total_input=0x7f080007;
+        public static final int action_settings=0x7f080012;
+        public static final int add_contact_button=0x7f080009;
+        public static final int add_new_item_button=0x7f080003;
+        public static final int browse_contact_button=0x7f080008;
+        public static final int button1=0x7f080010;
+        public static final int button2=0x7f080011;
+        public static final int clear_payee_button=0x7f080007;
+        public static final int item_list=0x7f080004;
+        public static final int name_input=0x7f080005;
+        public static final int name_item_input=0x7f080002;
+        public static final int number_input=0x7f080006;
+        public static final int number_payees_input=0x7f08000b;
+        public static final int payees_list=0x7f08000a;
+        public static final int price_item_input=0x7f080001;
+        public static final int quantity_item_input=0x7f080000;
+        public static final int subtotal_input=0x7f08000f;
+        public static final int tip_checkbox=0x7f08000e;
+        public static final int tip_notification=0x7f08000d;
+        public static final int total_input=0x7f08000c;
     }
     public static final class layout {
-        public static final int activity_add_payees=0x7f030000;
-        public static final int activity_even_split=0x7f030001;
-        public static final int activity_itemize=0x7f030002;
-        public static final int activity_main=0x7f030003;
+        public static final int activity_add_items=0x7f030000;
+        public static final int activity_add_payees=0x7f030001;
+        public static final int activity_even_split=0x7f030002;
+        public static final int activity_itemize=0x7f030003;
+        public static final int activity_main=0x7f030004;
     }
     public static final class menu {
-        public static final int add_payees=0x7f070000;
-        public static final int even_split=0x7f070001;
-        public static final int itemize=0x7f070002;
-        public static final int main=0x7f070003;
+        public static final int add_items=0x7f070000;
+        public static final int add_payees=0x7f070001;
+        public static final int even_split=0x7f070002;
+        public static final int itemize=0x7f070003;
+        public static final int main=0x7f070004;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int add_contact_button=0x7f05000d;
+        public static final int add_to_list=0x7f050017;
         public static final int app_name=0x7f050000;
         public static final int browse_contact_button=0x7f050010;
         public static final int clear_payee_list=0x7f050012;
@@ -62,11 +70,15 @@ public final class R {
         public static final int hello_world=0x7f050002;
         public static final int itemize_button=0x7f050008;
         public static final int name_input=0x7f05000e;
+        public static final int name_item_input=0x7f050014;
         public static final int number_input=0x7f05000f;
         public static final int number_payees_input=0x7f050004;
+        public static final int price_item_input=0x7f050015;
+        public static final int quantity_item_input=0x7f050016;
         public static final int subtotal_input=0x7f050005;
         public static final int tip_checkbox=0x7f05000b;
         public static final int tip_notification=0x7f050009;
+        public static final int title_activity_add_items=0x7f050013;
         public static final int title_activity_add_payees=0x7f05000c;
         public static final int title_activity_even_results=0x7f050011;
         public static final int title_activity_even_split=0x7f050003;
