@@ -21,7 +21,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/name_input"
-            android:inputType="textCapWords" />
+            android:inputType="textCapWords"
+            android:focusable="true"
+             />
 	</LinearLayout>
 	
     <LinearLayout

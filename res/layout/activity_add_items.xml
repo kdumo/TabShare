@@ -25,7 +25,8 @@
         	android:layout_height="wrap_content"
         	android:layout_weight="1"
         	android:hint="@string/price_item_input"
-        	android:inputType="numberDecimal"/>
+        	android:inputType="numberDecimal"
+        	android:focusable="true"/>
 	    
 </LinearLayout>
 	<LinearLayout

@@ -41,6 +41,10 @@
             android:name="com.comp380.summer13.group1.tabshare.AddItems"
             android:label="@string/title_activity_add_items" >
         </activity>
+        <activity
+            android:name="com.comp380.summer13.group1.tabshare.Results"
+            android:label="@string/title_activity_results" >
+        </activity>
     </application>
 
 </manifest>

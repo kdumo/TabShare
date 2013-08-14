@@ -10,7 +10,6 @@
     <string name="even_split_button">Split Bill Evenly</string>
     <string name="itemize_button">Split Bill Fairly</string>
     <string name="tip_notification">Tip is usually included for large parties.  If the service was great, why not add a little extra?</string>
-    <string name="title_activity_itemize">Itemize Bill Items</string>
     <string name="tip_checkbox">Add Tip</string>
     <string name="title_activity_add_payees">Add Bill Payees</string>
     <string name="add_contact_button">Add</string>
@@ -35,5 +34,10 @@
     <string name="even_15">15%</string>
     <string name="even_round_up">Round Up</string>
     <string name="even_calculate">Calculate</string>
+    <string name="itemize_calculate">Recalculate</string>
+    <string name="final_total_display_default">Error: No Total Returned</string>
+    <string name="continue_to_results">Continue to Results</string>
+    <string name="title_activity_itemize">Total and Tip</string>
+    <string name="title_activity_results">Final Totals</string>
 
 </resources>

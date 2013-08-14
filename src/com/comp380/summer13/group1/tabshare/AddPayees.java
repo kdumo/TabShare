@@ -1,6 +1,7 @@
 package com.comp380.summer13.group1.tabshare;
 
 import java.util.ArrayList;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentResolver;
@@ -13,7 +14,6 @@ import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.Contacts;
 import android.provider.ContactsContract.Data;
-import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -119,10 +119,6 @@ public class AddPayees extends Activity {
 				        		bgObj = bgList.get(findInList(payeeName));
 				        		Intent intent = new Intent(AddPayees.this, AddItems.class);
 				        		startActivity(intent);
-				        		
-				        		
-				        	/*	SmsManager smsManager = SmsManager.getDefault();
-				        		smsManager.sendTextMessage("+1-661-505-8458", null, "sms message", null, null); */
 				        		break;
 				        	case 3:
 				        		AlertDialog.Builder delete = new AlertDialog.Builder(AddPayees.this);
@@ -248,6 +244,7 @@ public class AddPayees extends Activity {
 					nameEntry.setText(null);
 					numbEntry.setText(null);
 				}
+				findViewById(R.id.name_input).requestFocus();
 			}
 		});
 		

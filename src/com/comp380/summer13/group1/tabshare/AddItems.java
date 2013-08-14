@@ -3,6 +3,7 @@ package com.comp380.summer13.group1.tabshare;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -50,14 +51,23 @@ public class AddItems extends Activity {
 		}
 		final ArrayAdapter adpter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list);
 		items.setAdapter(adpter);
-		
+		findViewById(R.id.price_item_input).requestFocus();
 		Button addItemsButton = (Button) findViewById(R.id.add_new_item_button);
 		addItemsButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				String quant = ((EditText) findViewById(R.id.quantity_item_input)).getText().toString();
+				String pri = ((EditText) findViewById(R.id.price_item_input)).getText().toString();
 				Log.v(null, "Quant is "+quant);
 				if (quant.length()<1||quant==null) quant = "1.0";
+				if (pri.length()<1||pri==null) {
+					AlertDialog.Builder noPrice = new AlertDialog.Builder(AddItems.this);
+					noPrice.setTitle("No Price");
+					noPrice.setMessage("You must have a price for the item!\nQuantity is 1 if unmodified");
+					noPrice.setPositiveButton("Got it!", null);
+					noPrice.show();
+					return;
+				}
 				double quantity = Double.parseDouble(quant);
 				double price = Double.parseDouble(((EditText) findViewById(R.id.price_item_input)).getText().toString());
 				String name = ((EditText) findViewById(R.id.name_item_input)).getText().toString();
@@ -72,6 +82,7 @@ public class AddItems extends Activity {
 				((EditText) findViewById(R.id.name_item_input)).setText(null);
 				AddPayees.bgList.get(payeeListIndex).getPayee(0).addItem(new BillItem(name, quantity, price));
 				items.setAdapter(adpter);
+				findViewById(R.id.price_item_input).requestFocus();
 			}
 		});
 	}
