@@ -131,7 +131,7 @@ public class Results extends Activity {
 		});
 		String total = Double.toString(Itemize.finalTotal);
 		TextView display = (TextView) findViewById(R.id.final_results_summary);
-		display.setText("Total is $"+total+"\nRounding may ");
+		display.setText("Total is $"+total+"\nRounding may yield a slightly higher combined total");
 				
 	}
 
