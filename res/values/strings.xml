@@ -24,10 +24,8 @@
     <string name="price_item_input">Price</string>
     <string name="quantity_item_input">Quantity</string>
     <string name="add_to_list">Add Item</string>
-<<<<<<< HEAD
     <string name="next_button">Next</string>
     <string name="subtotal_display_default">Error: No Subtotal Returned</string>
-=======
     <string name="even_subtotal">Subtotal</string>
     <string name="even_tip">Tip</string>
     <string name="even_total">Total</string>
@@ -37,6 +35,5 @@
     <string name="even_15">15%</string>
     <string name="even_round_up">Round Up</string>
     <string name="even_calculate">Calculate</string>
->>>>>>> d299af53139e6c969b0971cdbf540623f3f95882
 
 </resources>

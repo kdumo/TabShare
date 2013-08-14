@@ -22,20 +22,7 @@
             android:hint="@string/number_payees_input"
             android:inputType="number" />
     </LinearLayout>
-    <!--
-    <LinearLayout
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:orientation="horizontal">
-	    <EditText
-        	android:id="@+id/subtotal_input"
-        	android:layout_width="0dp"
-        	android:layout_height="wrap_content"
-        	android:layout_weight="1"
-        	android:hint="@string/subtotal_input"
-        	android:inputType="numberDecimal" />
-	</LinearLayout>
-    -->
+
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -71,13 +58,6 @@
         android:gravity="center"
         android:orientation="horizontal" >
 
-        <Button
-            android:id="@+id/calculate_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="splitBill"
-            android:text="@string/even_calculate" />
-
         <CheckBox
             android:id="@+id/tip_checkbox"
             android:layout_width="wrap_content"
@@ -85,6 +65,19 @@
             android:onClick="addTip"
             android:text="@string/tip_checkbox" />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/calculate_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="splitBill"
+            android:text="@string/even_calculate" />
+        </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

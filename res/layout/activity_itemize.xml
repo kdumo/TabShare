@@ -57,9 +57,72 @@
 		    android:id="@+id/tip_checkbox_itemize"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
-		    android:text="@string/tip_checkbox" />
+		    android:text="@string/tip_checkbox"
+		    android:onClick="toggleTipRadios" />
 	</LinearLayout>
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:id="@+id/tip_radios"
+        android:visibility="invisible">
+	    <RadioButton
+            android:id="@+id/percent5_btn_final"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/even_5"
+            android:checked="false"
+            android:onClick="tipRadio"/>
+        <RadioButton
+            android:id="@+id/percent10_btn_final"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="@string/even_10"
+            android:onClick="tipRadio"/>
 
-	
+        <RadioButton
+            android:id="@+id/percent15_btn_final"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/even_15"
+            android:checked="true"
+            android:onClick="tipRadio"/>
+
+        <RadioButton
+            android:id="@+id/round_up_btn_final"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "@string/even_round_up"
+            android:checked="false"
+            android:onClick="tipRadio"
+            />
+    </LinearLayout>
+	<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/calculate_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/even_calculate" />
+        </LinearLayout>
+	<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+    	<ListView
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="fill_parent"
+    	    android:gravity="center"
+    	    android:id="@+id/final_list"/>
+        
+    </LinearLayout>
 
 </LinearLayout>

@@ -55,10 +55,14 @@ public class AddItems extends Activity {
 		addItemsButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				double quantity = Integer.parseInt(((EditText) findViewById(R.id.quantity_item_input)).getText().toString());
+				String quant = ((EditText) findViewById(R.id.quantity_item_input)).getText().toString();
+				Log.v(null, "Quant is "+quant);
+				if (quant.length()<1||quant==null) quant = "1.0";
+				double quantity = Double.parseDouble(quant);
 				double price = Double.parseDouble(((EditText) findViewById(R.id.price_item_input)).getText().toString());
 				String name = ((EditText) findViewById(R.id.name_item_input)).getText().toString();
 				if (name.length()<1) name = "Items";
+				if(quantity<1) quantity = 1.0;
 				double subtotal = quantity*price;
 				subtotal = (double)Math.ceil(subtotal * 10000) / 10000;
 				subtotal = (double)Math.round(subtotal*100)/100;
