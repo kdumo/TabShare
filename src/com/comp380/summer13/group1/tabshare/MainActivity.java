@@ -1,5 +1,7 @@
 package com.comp380.summer13.group1.tabshare;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,6 +33,7 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				AddPayees.bgList = new ArrayList<BillGroup>();
 				Intent intent = new Intent(MainActivity.this, AddPayees.class);
 				startActivity(intent);
 				

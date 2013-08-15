@@ -4,10 +4,12 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +25,7 @@ public class AddItems extends Activity {
 		final ListView items = (ListView) findViewById(R.id.item_list);
 		final ArrayList<String> list = new ArrayList<String>();
 		String payeeName = AddPayees.bgObj.getPayee(0).getName();
+		setTitle("Add items for "+payeeName);
 		for (int i=0; i<AddPayees.bgList.size(); i++) {
 			if (AddPayees.bgList.get(i).getPayee(0).getName().equals(payeeName)) payeeListIndex = i;
 		}
@@ -51,6 +54,9 @@ public class AddItems extends Activity {
 		}
 		final ArrayAdapter adpter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,list);
 		items.setAdapter(adpter);
+		
+		
+		
 		findViewById(R.id.price_item_input).requestFocus();
 		Button addItemsButton = (Button) findViewById(R.id.add_new_item_button);
 		addItemsButton.setOnClickListener(new View.OnClickListener() {

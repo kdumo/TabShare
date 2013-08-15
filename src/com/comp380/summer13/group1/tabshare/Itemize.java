@@ -57,6 +57,7 @@ public class Itemize extends Activity {
 		finalize.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				applyTip();
 				Intent intent = new Intent(Itemize.this, Results.class);
 				startActivity(intent);
 			}
